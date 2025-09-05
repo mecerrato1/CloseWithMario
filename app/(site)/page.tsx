@@ -1,8 +1,11 @@
 import Link from "next/link";
+import RateTicker from "@/components/RateTicker";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      <RateTicker />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
         <div className="container mx-auto px-4">
@@ -14,7 +17,7 @@ export default function HomePage() {
               Expert mortgage guidance and personalized service to help you buy
               your home with confidence. Let&apos;s make homeownership a reality.
             </p>
-            
+
             {/* Primary CTAs */}
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Link
@@ -46,81 +49,36 @@ export default function HomePage() {
               your success.
             </p>
           </div>
-          
+
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg
-                  className="h-8 w-8 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
+                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                Expert Guidance
-              </h3>
-              <p className="text-gray-600">
-                Years of experience helping clients navigate the mortgage
-                process with confidence.
-              </p>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Expert Guidance</h3>
+              <p className="text-gray-600">Years of experience helping clients navigate the mortgage process with confidence.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg
-                  className="h-8 w-8 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
+                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                Fast Processing
-              </h3>
-              <p className="text-gray-600">
-                Streamlined application process to get you pre-approved and
-                ready to buy quickly.
-              </p>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Fast Processing</h3>
+              <p className="text-gray-600">Streamlined application process to get you pre-approved and ready to buy quickly.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg
-                  className="h-8 w-8 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
+                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                Personal Service
-              </h3>
-              <p className="text-gray-600">
-                Dedicated support throughout your home buying journey, from
-                start to close.
-              </p>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Personal Service</h3>
+              <p className="text-gray-600">Dedicated support throughout your home buying journey, from start to close.</p>
             </div>
           </div>
         </div>

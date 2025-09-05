@@ -47,3 +47,6 @@ body {
     max-width: 1536px;
   }
 }
+/* hide scrollbar for the ticker overflow */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
