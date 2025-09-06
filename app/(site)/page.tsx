@@ -59,7 +59,7 @@ export default function HomePage() {
               {/* WHITE background portrait */}
               <div className="mx-auto mb-5 w-full max-w-xs overflow-hidden rounded-2xl">
                 <div className="relative aspect-[4/5] rounded-2xl bg-white ring-1 ring-black/10 dark:ring-white/10">
-                  <Image src="/mario.jpg" alt="Mario Cerrato" fill className="object-contain p-3" priority />
+                  <Image src="/mario.png" alt="Mario Cerrato" fill className="object-contain p-3" priority />
                 </div>
               </div>
 
@@ -90,8 +90,8 @@ export default function HomePage() {
               </div>
 
               <div className="mb-5 overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600">
-                  <Image src="/finance.jpg" alt="Mortgage financing" fill className="object-cover" />
+                <div className="relative aspect-[9/16] rounded-2xl bg-white flex items-center justify-center p-4">
+                  <Image src="/finance.png" alt="Mortgage financing" fill className="object-contain" />
                 </div>
               </div>
 
