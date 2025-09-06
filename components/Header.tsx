@@ -2,18 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm dark:bg-neutral-950">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          {/* Brand */}
+          {/* Brand (SVG logo) */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              CloseWithMario
+            <Link href="/" className="inline-flex items-center" aria-label="Close With Mario — Home">
+              <Image
+                src="/closewithmariologo.png"
+                alt="Close With Mario"
+                width={331}
+                height={75}
+                className="h-12 w-auto object-contain scale-110"
+                priority
+              />
             </Link>
           </div>
 
@@ -21,19 +29,19 @@ export default function Header() {
           <nav className="hidden items-center space-x-8 md:flex">
             <Link
               href="/buy"
-              className="text-gray-700 transition-colors hover:text-blue-600"
+              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
             >
               Buy
             </Link>
             <Link
               href="/mortgage"
-              className="text-gray-700 transition-colors hover:text-blue-600"
+              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
             >
               Mortgage
             </Link>
             <Link
               href="/rates"
-              className="text-gray-700 transition-colors hover:text-blue-600"
+              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
             >
               Rates
             </Link>
@@ -47,7 +55,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="text-gray-700 md:hidden dark:text-gray-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -78,23 +86,23 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="border-t py-4 md:hidden">
+          <nav className="border-t py-4 md:hidden dark:border-white/10">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/buy"
-                className="text-gray-700 transition-colors hover:text-blue-600"
+                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
                 Buy
               </Link>
               <Link
                 href="/mortgage"
-                className="text-gray-700 transition-colors hover:text-blue-600"
+                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
                 Mortgage
               </Link>
               <Link
                 href="/rates"
-                className="text-gray-700 transition-colors hover:text-blue-600"
+                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
                 Rates
               </Link>

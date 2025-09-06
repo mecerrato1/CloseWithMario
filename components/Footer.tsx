@@ -9,7 +9,8 @@ export default function Footer() {
             © {currentYear} CloseWithMario. All rights reserved.
           </div>
           <div>
-            NMLS ID: [License Number Pending]
+            NMLS ID: 93260
+            Realtor ID: 3245079
           </div>
         </div>
       </div>

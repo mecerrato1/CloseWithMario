@@ -1,85 +1,119 @@
+'use client';
+
+import Image from "next/image";
 import Link from "next/link";
-import RateTicker from "@/components/RateTicker";
+import RateTicker from "@/components/RateTicker"; // if this import errors, see note below
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-950 dark:text-white">
+      {/* rate ticker at very top */}
       <RateTicker />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Your Dream Home Awaits
+      <section className="relative bg-gradient-to-b from-white to-gray-50 dark:from-neutral-950 dark:to-neutral-900">
+        <div className="mx-auto max-w-7xl px-4 py-10 md:py-14">
+          <div className="mb-8 text-center">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              Close With Mario — Real Estate & Mortgage, Together
             </h1>
-            <p className="mb-8 text-xl text-gray-600 sm:text-2xl">
-              Expert mortgage guidance and personalized service to help you buy
-              your home with confidence. Let&apos;s make homeownership a reality.
-            </p>
-
-            {/* Primary CTAs */}
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/buy"
-                className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                I&apos;m Buying a Home
-              </Link>
-              <Link
-                href="/mortgage"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-blue-600 bg-white px-8 py-4 text-lg font-semibold text-blue-600 transition-all hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                I Need a Mortgage
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Why Choose CloseWithMario?
-            </h2>
-            <p className="mb-12 text-lg text-gray-600">
-              Professional expertise, personalized service, and a commitment to
-              your success.
+            <p className="mt-3 text-lg opacity-80">
+              One trusted guide for buying, selling, and financing across South Florida.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Column 1 — Buying or Selling */}
+            <div className="rounded-3xl border border-black/10 bg-white/70 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="text-2xl font-semibold">Buying or Selling</h2>
+                <span className="rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">Real Estate</span>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Expert Guidance</h3>
-              <p className="text-gray-600">Years of experience helping clients navigate the mortgage process with confidence.</p>
+
+              <div className="mb-5 overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600">
+                  <Image src="/buy.jpg" alt="South Florida homes" fill className="object-cover" priority />
+                </div>
+              </div>
+
+              <p className="mb-5 opacity-80">
+                Search homes, schedule tours, list your property, and negotiate with confidence.
+              </p>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/buy" className="inline-flex flex-1 items-center justify-center rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">
+                  Search Homes
+                </Link>
+                <Link href="/mortgage" className="inline-flex flex-1 items-center justify-center rounded-xl border border-blue-600 px-4 py-3 font-semibold text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30">
+                  List / Sell
+                </Link>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
+            {/* Column 2 — Mario + Video */}
+            <div className="rounded-3xl border border-black/10 bg-white/70 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <div className="mb-4 text-center">
+                <h2 className="text-2xl font-semibold">Mario Cerrato</h2>
+                <p className="text-sm opacity-70">Realtor & Mortgage Advisor • South Florida</p>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Fast Processing</h3>
-              <p className="text-gray-600">Streamlined application process to get you pre-approved and ready to buy quickly.</p>
+
+              {/* WHITE background portrait */}
+              <div className="mx-auto mb-5 w-full max-w-xs overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/5] rounded-2xl bg-white ring-1 ring-black/10 dark:ring-white/10">
+                  <Image src="/mario.jpg" alt="Mario Cerrato" fill className="object-contain p-3" priority />
+                </div>
+              </div>
+
+              <div className="mb-5 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
+                <div className="relative aspect-video bg-[url('/video-thumb.jpg')] bg-cover bg-center">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    <a
+                      href="https://www.youtube.com/"
+                      target="_blank"
+                      className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-gray-900 hover:bg-gray-100"
+                    >
+                      ▶ Watch Intro
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-center text-sm opacity-80">
+                I can handle both sides of your transaction — agent & financing — for a smoother close.
+              </p>
             </div>
 
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-                <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                </svg>
+            {/* Column 3 — Need Financing */}
+            <div className="rounded-3xl border border-black/10 bg-white/70 p-5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="text-2xl font-semibold">Need Financing</h2>
+                <span className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white">Mortgage</span>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Personal Service</h3>
-              <p className="text-gray-600">Dedicated support throughout your home buying journey, from start to close.</p>
+
+              <div className="mb-5 overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600">
+                  <Image src="/finance.jpg" alt="Mortgage financing" fill className="object-cover" />
+                </div>
+              </div>
+
+              <p className="mb-5 opacity-80">
+                Get pre-approved, check rates, and compare programs (Conventional, FHA, VA).
+              </p>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/mortgage" className="inline-flex flex-1 items-center justify-center rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-700">
+                  Get Pre-Approved
+                </Link>
+                <Link href="/calculators/dti" className="inline-flex flex-1 items-center justify-center rounded-xl border border-emerald-600 px-4 py-3 font-semibold text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
+                  Try DTI Calc
+                </Link>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-10 grid gap-4 text-sm opacity-80 md:grid-cols-3">
+            <div className="rounded-2xl border border-black/10 p-4 text-center dark:border-white/10">South Florida specialist</div>
+            <div className="rounded-2xl border border-black/10 p-4 text-center dark:border-white/10">Transparent rates & fees</div>
+            <div className="rounded-2xl border border-black/10 p-4 text-center dark:border-white/10">Close smoothly — one point of contact</div>
           </div>
         </div>
       </section>
