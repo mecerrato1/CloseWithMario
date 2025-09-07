@@ -1,12 +1,13 @@
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
+// lib/supabaseServer.ts
+import { cookies } from "next/headers";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 
 /**
- * Server-side Supabase client (for use in server actions/route handlers).
+ * Server-side Supabase client (for server components, actions, and route handlers).
  * Uses Next.js cookies to persist the auth session.
  */
-export const supabaseServer = () => {
-  const cookieStore = cookies();
+export async function supabaseServer() {
+  const cookieStore = await cookies();
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -16,14 +17,14 @@ export const supabaseServer = () => {
         get(name: string) {
           return cookieStore.get(name)?.value;
         },
-        set(name: string, value: string, options: any) {
+        set(name: string, value: string, options: CookieOptions) {
           // Next's cookies() API sets the cookie on the response
           cookieStore.set({ name, value, ...options });
         },
-        remove(name: string, options: any) {
-          cookieStore.set({ name, value: '', ...options });
+        remove(name: string, options: CookieOptions) {
+          cookieStore.set({ name, value: "", ...options });
         },
       },
     }
   );
-};
+}
