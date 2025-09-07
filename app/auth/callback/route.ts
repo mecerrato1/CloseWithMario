@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   const next = url.searchParams.get("next") ?? "/";
 
   if (code) {
-    const supabase = supabaseServer();
+    const supabase = await supabaseServer();
     // This sets the Supabase auth cookie on your domain
     await supabase.auth.exchangeCodeForSession(code);
   }
