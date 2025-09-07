@@ -14,7 +14,7 @@ export default function BuyPage() {
     e.preventDefault();
     setLoading(true);
     const fd = new FormData(e.currentTarget);
-    const params = new URLSearchParams(fd as any).toString();
+    const params = new URLSearchParams(fd as unknown as Record<string, string>).toString();
     const res = await fetch(`/api/listings?${params}`);
     const data = await res.json();
     setListings(data);

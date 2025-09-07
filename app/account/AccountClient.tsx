@@ -32,7 +32,7 @@ export default function AccountClient() {
       }
       setLoading(false);
     })();
-  }, []);
+  }, [supabase]);
 
   const save = async () => {
     setLoading(true);
