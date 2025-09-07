@@ -1,14 +1,24 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Schema from './Schema';
+// app/(site)/layout.tsx
+import type { Metadata } from "next";
+import Schema from "./Schema";
 
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: {
+    default: "Close With Mario",
+    template: "%s | Close With Mario",
+  },
+  description: "Real estate & mortgage together — serving South Florida.",
+};
+
+export default function SiteLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
       <Schema />
+      {children}
     </>
   );
 }

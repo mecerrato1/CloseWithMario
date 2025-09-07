@@ -1,29 +1,26 @@
-import './globals.css';
-import type { Metadata } from 'next';
+// app/layout.tsx
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://closewithmario.com'),
-  title: { default: 'Close With Mario', template: '%s | Close With Mario' },
-  description: 'Real estate + mortgage in one place. Buy smarter, finance better.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    url: 'https://closewithmario.com',
-    title: 'Close With Mario',
-    description: 'Real estate + mortgage in one place.',
-    siteName: 'Close With Mario',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Close With Mario',
-    description: 'Real estate + mortgage in one place.',
-  },
+  title: "Close With Mario",
+  description: "Real estate + mortgage in one place — South Florida.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-white text-gray-900 dark:bg-neutral-950 dark:text-white">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
