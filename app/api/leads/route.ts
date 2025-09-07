@@ -10,7 +10,7 @@ function hasNonEmptyHoneypot(v: unknown): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  // Parse JSON safely
+  // Parse JSON safely from request body
   let body: unknown;
   try {
     body = await req.json();
