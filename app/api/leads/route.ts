@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseServer } from "@/lib/supabaseServer";
 import { leadSchema } from "@/lib/leadSchema";
 
-// type-safe honeypot check (no "any")
+// Type-safe honeypot check
 function hasNonEmptyHoneypot(v: unknown): boolean {
   if (typeof v !== "object" || v === null) return false;
   const hp = (v as Record<string, unknown>).honeypot;
