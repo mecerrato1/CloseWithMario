@@ -11,12 +11,12 @@ export default function Header() {
   const supabase = supabaseBrowser();
 
   useEffect(() => {
-    // initial load
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUserEmail(session?.user?.email ?? null);
     });
-    // keep in sync
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_e, session) => {
       setUserEmail(session?.user?.email ?? null);
     });
     return () => subscription.unsubscribe();
@@ -34,7 +34,11 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Brand (logo) */}
           <div className="flex items-center">
-            <Link href="/" className="inline-flex items-center" aria-label="Close With Mario — Home">
+            <Link
+              href="/"
+              className="inline-flex items-center"
+              aria-label="Close With Mario — Home"
+            >
               <Image
                 src="/closewithmariologo.png"
                 alt="Close With Mario"
@@ -66,12 +70,21 @@ export default function Header() {
             >
               Rates
             </Link>
+            <Link
+              href="/legacy"
+              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+            >
+              Legacy
+            </Link>
 
             {/* Auth status */}
             {userEmail ? (
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-300">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                  <span
+                    className="h-2 w-2 rounded-full bg-emerald-500"
+                    aria-hidden="true"
+                  />
                   {userEmail}
                 </span>
                 <Link
@@ -97,28 +110,47 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="text-gray-700 md:hidden dark:text-gray-200"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Right side (mobile): small Legacy pill + hamburger */}
+          <div className="flex items-center md:hidden">
+            <Link
+              href="/legacy"
+              className="mr-3 rounded-lg border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:border-white/10 dark:hover:bg-white/5"
             >
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+              Legacy
+            </Link>
+
+            <button
+              className="text-gray-700 dark:text-gray-200"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation (dropdown) */}
         {isMenuOpen && (
           <nav className="border-t py-4 md:hidden dark:border-white/10">
             <div className="flex flex-col space-y-4">
@@ -141,7 +173,7 @@ export default function Header() {
                 Rates
               </Link>
 
-              {/* Auth status (mobile) */}
+              {/* Auth (mobile) */}
               {userEmail ? (
                 <>
                   <Link
