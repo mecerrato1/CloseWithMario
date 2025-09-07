@@ -5,6 +5,7 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 /**
  * Server-side Supabase client (for server components, actions, and route handlers).
  * Uses Next.js cookies to persist the auth session.
+ * Updated for Next.js 15 compatibility.
  */
 export async function supabaseServer() {
   const cookieStore = await cookies();
