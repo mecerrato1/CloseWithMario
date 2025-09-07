@@ -39,14 +39,17 @@ export default function Header() {
               className="inline-flex items-center"
               aria-label="Close With Mario — Home"
             >
-              <Image
-                src="/closewithmariologo.png"
-                alt="Close With Mario"
-                width={331}
-                height={75}
-                className="h-12 w-auto object-contain scale-110"
-                priority
-              />
+              {/* The pill only shows in dark mode */}
+              <div className="inline-flex items-center dark:rounded-md dark:bg-white/90 dark:px-2 dark:py-1">
+                <Image
+                  src="/closewithmariologo.png"
+                  alt="Close With Mario"
+                  width={331}
+                  height={75}
+                  className="h-10 w-auto object-contain md:h-12"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
