@@ -76,6 +76,12 @@ export default function Header() {
             >
               Legacy
             </Link>
+            <Link
+              href="/apply"
+              className="rounded-lg bg-emerald-600 px-4 py-2 font-medium text-white transition-colors hover:bg-emerald-700"
+            >
+              Apply for Mortgage
+            </Link>
 
             {/* Auth status */}
             {userEmail ? (
@@ -110,7 +116,7 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Right side (mobile): small Legacy pill + hamburger */}
+          {/* Right side (mobile): Legacy pill + hamburger */}
           <div className="flex items-center md:hidden">
             <Link
               href="/legacy"
@@ -171,6 +177,18 @@ export default function Header() {
                 className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
                 Rates
+              </Link>
+              <Link
+                href="/legacy"
+                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              >
+                Legacy
+              </Link>
+              <Link
+                href="/apply"
+                className="inline-block rounded-lg bg-emerald-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-emerald-700"
+              >
+                Apply for Mortgage
               </Link>
 
               {/* Auth (mobile) */}
