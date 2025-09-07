@@ -74,7 +74,7 @@ export default function Header() {
               href="/legacy"
               className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
             >
-              Legacy
+              Find your Dream Home
             </Link>
             <Link
               href="/apply"
@@ -122,7 +122,7 @@ export default function Header() {
               href="/legacy"
               className="mr-3 rounded-lg border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:border-white/10 dark:hover:bg-white/5"
             >
-              Legacy
+              Find your Dream Home
             </Link>
 
             <button
@@ -182,7 +182,7 @@ export default function Header() {
                 href="/legacy"
                 className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
-                Legacy
+                Find your Dream Home
               </Link>
               <Link
                 href="/apply"

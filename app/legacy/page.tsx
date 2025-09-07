@@ -12,7 +12,7 @@ export default function LegacyEmbedPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-6">
-      <h1 className="mb-4 text-2xl font-bold">Legacy Site</h1>
+      <h1 className="mb-4 text-2xl font-bold">Dream Home Search</h1>
 
       <div className="overflow-hidden rounded-2xl border dark:border-white/10">
         {/* Full viewport height minus some space for header/footer */}

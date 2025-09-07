@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import RateTicker from "@/components/RateTicker"; // if this import errors, see note below
+import RateTicker from "@/components/RateTicker";
 
 export default function HomePage() {
   return (
@@ -40,10 +40,16 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Link href="/buy" className="inline-flex flex-1 items-center justify-center rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">
+                <Link
+                  href="/buy"
+                  className="inline-flex flex-1 items-center justify-center rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700"
+                >
                   Search Homes
                 </Link>
-                <Link href="/mortgage" className="inline-flex flex-1 items-center justify-center rounded-xl border border-blue-600 px-4 py-3 font-semibold text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30">
+                <Link
+                  href="/mortgage"
+                  className="inline-flex flex-1 items-center justify-center rounded-xl border border-blue-600 px-4 py-3 font-semibold text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30"
+                >
                   List / Sell
                 </Link>
               </div>
@@ -100,10 +106,19 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Link href="/mortgage" className="inline-flex flex-1 items-center justify-center rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-700">
+                {/* Route to embedded application page (/apply) */}
+                <Link
+                  href="/apply"
+                  prefetch={false}
+                  className="inline-flex flex-1 items-center justify-center rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-700"
+                >
                   Get Pre-Approved
                 </Link>
-                <Link href="/calculators/dti" className="inline-flex flex-1 items-center justify-center rounded-xl border border-emerald-600 px-4 py-3 font-semibold text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
+
+                <Link
+                  href="/calculators/dti"
+                  className="inline-flex flex-1 items-center justify-center rounded-xl border border-emerald-600 px-4 py-3 font-semibold text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
+                >
                   Try DTI Calc
                 </Link>
               </div>
