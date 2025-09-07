@@ -70,7 +70,8 @@ export default function Header() {
             {/* Auth status */}
             {userEmail ? (
               <div className="flex items-center gap-3">
-                <span className="hidden text-sm text-gray-500 md:inline dark:text-gray-300">
+                <span className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-300">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
                   {userEmail}
                 </span>
                 <Link
