@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
 
   // Insert into Supabase
-  const supabase = supabaseServer();
+  const supabase = await supabaseServer();
   const { error } = await supabase.from("leads").insert({
     name: d.name,
     email: d.email,
