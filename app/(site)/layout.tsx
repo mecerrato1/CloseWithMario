@@ -1,6 +1,7 @@
 // app/(site)/layout.tsx
 import type { Metadata } from "next";
 import Schema from "./Schema";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +18,9 @@ export default function SiteLayout({
 }) {
   return (
     <>
+      {/* Structured data */}
       <Schema />
+      <LocalBusinessSchema />
       {children}
     </>
   );
