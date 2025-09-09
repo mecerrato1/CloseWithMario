@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Schema from "./Schema";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   title: {
@@ -21,6 +22,7 @@ export default function SiteLayout({
       {/* Structured data */}
       <Schema />
       <LocalBusinessSchema />
+      <CookieConsent />
       {children}
     </>
   );

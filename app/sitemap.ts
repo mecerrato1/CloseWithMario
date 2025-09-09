@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculators",
     "/calculators/dti",
     "/miami-mortgage-broker",
+    "/privacy",
+    "/terms",
   ];
 
   return urls.map((path) => ({
