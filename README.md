@@ -35,9 +35,53 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-cat > README.md <<'EOF'
-# Close With Mario
+Deploy (Vercel)
+Connected to GitHub; push to main → Vercel builds & deploys.
+Add env vars in Vercel (Production + Preview).
+Domain: point closewithmario.com to Vercel (A/AAAA or CNAME). Vercel issues SSL automatically.
 
+OAuth (Google) with Supabase
+Google Cloud Console → OAuth 2.0 Client (Web):
+Authorized JavaScript origins:
+https://closewithmario.com
+http://localhost:3000
+(your Vercel preview domain if needed)
+Authorized redirect URIs: keep the Supabase callback, e.g.
+https://<project-ref>.supabase.co/auth/v1/callback
+
+Supabase → Authentication → URL Configuration:
+Site URL: https://closewithmario.com
+Redirect URLs: include /auth/callback for prod + localhost
+
+SEO
+Canonical + OG in app/(site)/layout.tsx
+app/(site)/sitemap.ts and app/robots.ts
+LocalBusiness JSON-LD (dual role): components/LocalBusinessSchema.tsx
+Analytics (optional)
+GA4 scaffolding is guarded by NEXT_PUBLIC_GA_ID.
+If you set it, route-change pageviews and lead_submit event (from LeadForm) will start sending.
+
+Rates
+Conventional: OBMMIC30YF via FRED (OBMMI 30Y Fixed)
+FHA/VA series also pulled from FRED
+Fetched in /api/rates and displayed by RateTicker.tsx
+
+Legal
+/privacy and /terms are public pages and linked in the footer.
+
+Scripts
+npm run dev     # start local dev server
+npm run build   # production build
+npm start       # run production build locally
+npm run lint    # run ESLint
+
+Docs
+Lightweight decision records live in docs/adr/:
+0001-auth-supabase.md
+0002-rates-obmmi.md
+0003-legacy-iframe.md
+
+# Close With Mario
 Real estate + mortgage in one Next.js app (App Router, TypeScript, Tailwind). Auth via Supabase. Deployed on Vercel.
 
 ## Stack
