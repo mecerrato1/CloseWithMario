@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { supabaseBrowser } from "@/lib/supabaseClient";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,6 +86,9 @@ export default function Header() {
             >
               Apply for Mortgage
             </Link>
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
 
             {/* Auth status */}
             {userEmail ? (
@@ -194,7 +198,12 @@ export default function Header() {
                 Apply for Mortgage
               </Link>
 
-              {/* Auth (mobile) */}
+              {/* Theme Toggle (mobile) */}
+              <div className="px-4">
+                <ThemeToggle />
+              </div>
+
+              {/* Auth status (mobile) */}
               {userEmail ? (
                 <>
                   <Link
