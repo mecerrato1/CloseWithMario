@@ -1,0 +1,32 @@
+
+C:\Users\User\Desktop\Projects New\closewithmario
+├── .env.local
+├── .git
+├── .gitignore
+├── .next
+├── .prettierignore
+├── .prettierrc
+├── app
+├── components
+├── CONTRIBUTING.md
+├── docs
+├── eslint.config.mjs
+├── lib
+├── next-env.d.ts
+├── next.config.ts
+├── node_modules
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── PROJECT_TREE.txt
+├── public
+├── README.md
+├── tailwind.config.js
+├── tsconfig.json
+└── tsconfig.tsbuildinfo
+
+directory: 8 file: 16
+
+
+
+[2K[1G
