@@ -30,9 +30,9 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-sm dark:bg-neutral-950">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 dark:bg-neutral-950/80 dark:border-white/10">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-3">
           {/* Brand (logo) */}
           <div className="flex items-center">
             <Link
@@ -55,60 +55,62 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center space-x-8 md:flex">
+          <nav className="hidden items-center space-x-6 md:flex">
             <Link
               href="/buy"
-              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
             >
               Buy
             </Link>
             <Link
               href="/mortgage"
-              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
             >
               Mortgage
             </Link>
             <Link
               href="/rates"
-              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
             >
               Rates
             </Link>
             <Link
               href="/legacy"
-              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
             >
               Find your Dream Home
             </Link>
-            <Link
-              href="/apply"
-              className="rounded-lg bg-emerald-600 px-4 py-2 font-medium text-white transition-colors hover:bg-emerald-700"
-            >
-              Apply for Mortgage
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/apply"
+                className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
+              >
+                Apply for Mortgage
+              </Link>
 
-            {/* Theme Toggle */}
-            <ThemeToggle />
+              {/* Theme Toggle */}
+              <ThemeToggle />
+            </div>
 
             {/* Auth status */}
             {userEmail ? (
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-300">
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                   <span
-                    className="h-2 w-2 rounded-full bg-emerald-500"
+                    className="h-1.5 w-1.5 rounded-full bg-emerald-500"
                     aria-hidden="true"
                   />
                   {userEmail}
                 </span>
                 <Link
                   href="/account"
-                  className="rounded-lg border px-3 py-2 text-gray-700 transition-colors hover:text-blue-600 dark:border-white/10 dark:text-gray-200 dark:hover:text-blue-400"
+                  className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-blue-400"
                 >
                   Account
                 </Link>
                 <button
                   onClick={handleSignOut}
-                  className="rounded-lg bg-gray-900 px-3 py-2 text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-900"
+                  className="rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-900"
                 >
                   Sign out
                 </button>
@@ -116,7 +118,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/login"
-                className="rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
               >
                 Login
               </Link>
@@ -124,16 +126,16 @@ export default function Header() {
           </nav>
 
           {/* Right side (mobile): Legacy pill + hamburger */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <Link
               href="/legacy"
-              className="mr-3 rounded-lg border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:border-white/10 dark:hover:bg-white/5"
+              className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:border-white/10 dark:hover:bg-white/5"
             >
               Find your Dream Home
             </Link>
 
             <button
-              className="text-gray-700 dark:text-gray-200"
+              className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -165,35 +167,35 @@ export default function Header() {
 
         {/* Mobile Navigation (dropdown) */}
         {isMenuOpen && (
-          <nav className="border-t py-4 md:hidden dark:border-white/10">
-            <div className="flex flex-col space-y-4">
+          <nav className="border-t border-gray-100 py-4 md:hidden dark:border-white/10">
+            <div className="flex flex-col space-y-3">
               <Link
                 href="/buy"
-                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Buy
               </Link>
               <Link
                 href="/mortgage"
-                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Mortgage
               </Link>
               <Link
                 href="/rates"
-                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Rates
               </Link>
               <Link
                 href="/legacy"
-                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 Find your Dream Home
               </Link>
               <Link
                 href="/apply"
-                className="inline-block rounded-lg bg-emerald-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-emerald-700"
+                className="inline-block rounded-lg bg-emerald-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-emerald-700"
               >
                 Apply for Mortgage
               </Link>
@@ -208,13 +210,13 @@ export default function Header() {
                 <>
                   <Link
                     href="/account"
-                    className="rounded-lg border px-4 py-2 text-center text-gray-700 transition-colors hover:text-blue-600 dark:border-white/10 dark:text-gray-200 dark:hover:text-blue-400"
+                    className="rounded-lg border border-gray-200 px-4 py-2 text-center text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-blue-400"
                   >
                     Account
                   </Link>
                   <button
                     onClick={handleSignOut}
-                    className="rounded-lg bg-gray-900 px-4 py-2 text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-900"
+                    className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-900"
                   >
                     Sign out
                   </button>
@@ -222,7 +224,7 @@ export default function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className="inline-block rounded-lg bg-blue-600 px-4 py-2 text-center text-white transition-colors hover:bg-blue-700"
+                  className="inline-block rounded-lg bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   Login
                 </Link>

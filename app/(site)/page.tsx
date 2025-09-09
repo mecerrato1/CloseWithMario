@@ -12,7 +12,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-10 md:py-14">
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Close With Mario — Real Estate & Mortgage, Together
+              Close With Mario - Real Estate & Mortgage, Together
             </h1>
             <p className="mt-3 text-lg opacity-80">
               One trusted guide for buying, selling, and financing across South Florida.

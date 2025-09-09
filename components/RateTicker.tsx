@@ -1,6 +1,6 @@
 /**
- * RateTicker: shows daily rates sourced from /api/rates.
- * Conventional = OBMMIC30YF (FRED OBMMI). FHA/VA series also pulled via FRED.
+ * RateTicker: shows daily rates sourced from FRED API with client padding.
+ * Conventional = OBMMIC30YF + 0.25%. FHA = OBMMIFHA30YF + 0.123%. VA = OBMMIVA30YF + 0.19%.
  * Revalidated periodically on the server; renders last known value if offline.
  */
 
@@ -11,9 +11,9 @@ type FredObs = { date: string; value: string };
 type FredResponse = { observations?: FredObs[] };
 
 const SERIES = [
-  { key: "conv", label: "Conventional 30", fred: "OBMMIC30YF" },   // OBMMI Conventional
-  { key: "fha",  label: "FHA 30",          fred: "OBMMIFHA30YF" }, // OBMMI FHA
-  { key: "va",   label: "VA 30",           fred: "OBMMIVA30YF" },  // OBMMI VA
+  { key: "conv", label: "Conventional 30", fred: "OBMMIC30YF", padding: 0.25 },   // OBMMI Conventional + 0.25%
+  { key: "fha",  label: "FHA 30",          fred: "OBMMIFHA30YF", padding: 0.123 }, // OBMMI FHA + 0.123%
+  { key: "va",   label: "VA 30",           fred: "OBMMIVA30YF", padding: 0.19 },  // OBMMI VA + 0.19%
 ];
 
 async function getLast(seriesId: string) {
@@ -43,7 +43,11 @@ export default async function RateTicker() {
   let data: { label: string; value?: number; date?: string }[] = [];
   try {
     const results = await Promise.all(SERIES.map((s) => getLast(s.fred)));
-    data = SERIES.map((s, i) => ({ label: s.label, value: results[i].value, date: results[i].date }));
+    data = SERIES.map((s, i) => ({ 
+      label: s.label, 
+      value: results[i].value ? results[i].value + s.padding : undefined, 
+      date: results[i].date 
+    }));
   } catch {
     // fail quietly so layout doesn't jump
     return null;
