@@ -75,6 +75,12 @@ export default function Header() {
               Rates
             </Link>
             <Link
+              href="/about"
+              className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+            >
+              About
+            </Link>
+            <Link
               href="/legacy"
               className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
             >
@@ -184,6 +190,12 @@ export default function Header() {
                 className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
               >
                 Rates
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              >
+                About
               </Link>
               <Link
                 href="/legacy"
