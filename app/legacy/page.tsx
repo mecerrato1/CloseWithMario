@@ -1,24 +1,21 @@
-// app/legacy/page.tsx
 import type { Metadata } from "next";
+import { LEGACY_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Legacy Site | Close With Mario",
-  description: "Embedded legacy website displayed under the main header.",
+  title: "Find Your Dream Home | Close With Mario",
+  description: "Embedded home search displayed under the main header.",
+  robots: { index: false, follow: false },
 };
 
 export default function LegacyEmbedPage() {
-  // If you want to embed another URL, change SRC below.
-  const SRC = "https://closewithmario.com";
-
   return (
     <main className="mx-auto max-w-7xl px-4 py-6">
-      <h1 className="mb-4 text-2xl font-bold">Dream Home Search</h1>
+      <h1 className="mb-4 text-2xl font-bold">Find Your Dream Home</h1>
 
       <div className="overflow-hidden rounded-2xl border dark:border-white/10">
-        {/* Full viewport height minus some space for header/footer */}
         <iframe
-          src={SRC}
-          title="Embedded Site"
+          src={LEGACY_URL}
+          title="Embedded Home Search"
           className="h-[calc(100vh-180px)] w-full"
           loading="eager"
           referrerPolicy="no-referrer-when-downgrade"
@@ -28,10 +25,10 @@ export default function LegacyEmbedPage() {
       <p className="mt-3 text-sm opacity-70">
         If the site doesn’t load here,{" "}
         <a
-          href={SRC}
+          href={LEGACY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-blue-600 hover:underline dark:text-blue-400"
         >
           open it in a new tab
         </a>
