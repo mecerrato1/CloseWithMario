@@ -1,3 +1,9 @@
+/**
+ * LeadForm: client-side capture form for mortgage leads.
+ * On success: fires GA event (if gtag present) and redirects to /thank-you.
+ * Uses a hidden "company" field as a honeypot (must remain empty).
+ */
+
 "use client";
 
 import { useRouter } from "next/navigation";

@@ -1,3 +1,9 @@
+/**
+ * RateTicker: shows daily rates sourced from /api/rates.
+ * Conventional = OBMMIC30YF (FRED OBMMI). FHA/VA series also pulled via FRED.
+ * Revalidated periodically on the server; renders last known value if offline.
+ */
+
 // components/RateTicker.tsx
 // Server component: fetches daily OBMMI series from FRED and renders a slim ticker
 

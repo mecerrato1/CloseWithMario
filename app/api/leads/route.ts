@@ -1,3 +1,13 @@
+/**
+ * POST /api/leads
+ * Persists a new lead from the mortgage form.
+ * Expects: { name, email, phone?, loan_purpose, price?, down_payment?, credit_score?, message?, page_path, honeypot }
+ * Returns: { ok: true } on success.
+ * Notes:
+ * - Uses Supabase server client; RLS protects the `leads` table.
+ * - Honeypot field ("company") deters simple spam bots.
+ */
+
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseServer } from "@/lib/supabaseServer";
 import { leadSchema } from "@/lib/leadSchema";
