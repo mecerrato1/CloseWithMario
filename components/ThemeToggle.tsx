@@ -30,7 +30,7 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
       className="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/10"
     >
-      {isDark ? 'Dark' : 'Light'}
+      {isDark ? 'Light' : 'Dark'}
     </button>
   );
 }
